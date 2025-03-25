@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload CSV</title>
+</head>
+<body>
+<h2>Upload CSV File</h2>
+<form method="POST" enctype="multipart/form-data">
+    <input type="file" name="csv_file">
+    <input type="submit" value="Upload">
+</form>
+<p><a href="{{ url_for('logout') }}">Logout</a></p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSV Content</title>
+</head>
+<body>
+<h2>CSV Content</h2>
+{% if csv_contents %}
+    <table border="1">
+        <thead>
+        <tr>
+            {% for key in csv_contents[0].keys() %}
+                <th>{{ key }}</th>
+            {% endfor %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in csv_contents %}
+            <tr>
+                {% for value in row.values() %}
+                    <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No CSV content to display</p>
+{% endif %}
+<p><a href="{{ url_for('upload_csv') }}">Upload another CSV</a> | <a href="{{ url_for('logout') }}">Logout</a></p>
+</body>
+</html>
